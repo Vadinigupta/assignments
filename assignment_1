@@ -1,0 +1,332 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPlJ2p4bqgYU71JONxe2Ilt",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Vadinigupta/assignments/blob/main/assignment_1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q1. Which keyword is used to create a function? Create a function to return a list of odd numbers in the\n",
+        "range of 1 to 25."
+      ],
+      "metadata": {
+        "id": "aBejaoSMdGm6"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Keyword used to create a function: def\n",
+        "Example (Python):\n",
+        "def odd_numbers_1_to_25():\n",
+        "    return [num for num in range(1, 26) if num % 2 != 0]\n",
+        "\n",
+        "# Calling the function\n",
+        "print(odd_numbers_1_to_25())\n",
+        "\n",
+        "Output:\n",
+        "[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]\n"
+      ],
+      "metadata": {
+        "id": "FRgF8CcNdMRm"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q2. Why *args and **kwargs is used in some functions? Create a function each for *args and **kwargs to\n",
+        "demonstrate their use."
+      ],
+      "metadata": {
+        "id": "9-JUIRV1dSl-"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Keyword used to create a function: def\n",
+        "\n",
+        "Example (Python):\n",
+        "\n",
+        "def odd_numbers_1_to_25():\n",
+        "    return [num for num in range(1, 26) if num % 2 != 0]\n",
+        "\n",
+        "# Calling the function\n",
+        "print(odd_numbers_1_to_25())\n",
+        "\n",
+        "\n",
+        "Output:\n",
+        "\n",
+        "[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]\n",
+        "\n",
+        "Q2. Why *args and **kwargs is used in some functions? Create a function each for *args and **kwargs to\n",
+        "demonstrate their use.\n",
+        "Why *args and **kwargs are used\n",
+        "\n",
+        "*args is used to pass a variable number of positional arguments to a function.\n",
+        "\n",
+        "**kwargs is used to pass a variable number of keyword (named) arguments to a function.\n",
+        "\n",
+        "They make functions more flexible, especially when you don’t know in advance how many arguments will be passed.\n",
+        "\n",
+        "Example using *args\n",
+        "def add_numbers(*args):\n",
+        "    total = 0\n",
+        "    for num in args:\n",
+        "        total += num\n",
+        "    return total\n",
+        "\n",
+        "# Function call\n",
+        "print(add_numbers(10, 20, 30))\n",
+        "\n",
+        "\n",
+        "Output:\n",
+        "\n",
+        "60\n",
+        "\n",
+        "Example using **kwargs\n",
+        "def display_details(**kwargs):\n",
+        "    for key, value in kwargs.items():\n",
+        "        print(f\"{key}: {value}\")\n",
+        "\n",
+        "# Function call\n",
+        "display_details(name=\"Alice\", age=25, city=\"New York\")\n",
+        "\n",
+        "\n",
+        "Output:\n",
+        "\n",
+        "name: Alice\n",
+        "age: 25\n",
+        "city: New York\n",
+        "\n",
+        "\n",
+        "Summary:\n",
+        "\n",
+        "Use *args when the number of positional arguments is unknown.\n",
+        "\n",
+        "Use **kwargs when the number of keyword arguments is unknown."
+      ],
+      "metadata": {
+        "id": "H5kla-Bldola"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q3. What is an iterator in python? Name the method used to initialise the iterator object and the method\n",
+        "used for iteration. Use these methods to print the first five elements of the given list [2, 4, 6, 8, 10, 12, 14, 16,\n",
+        "18, 20]."
+      ],
+      "metadata": {
+        "id": "xB4WvarteTLQ"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "What is an Iterator in Python?\n",
+        "\n",
+        "An iterator is an object in Python that can be iterated over, meaning you can traverse through all its elements one by one.\n",
+        "\n",
+        "Iterator object initialization method: iter()\n",
+        "\n",
+        "Method used to get the next item: next()\n",
+        "\n",
+        "Example: Printing the first five elements of a list\n",
+        "# Given list\n",
+        "numbers = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]\n",
+        "\n",
+        "# Initialize the iterator\n",
+        "numbers_iterator = iter(numbers)\n",
+        "\n",
+        "# Print the first five elements using next()\n",
+        "for _ in range(5):\n",
+        "    print(next(numbers_iterator))\n",
+        "\n",
+        "\n",
+        "Output:\n",
+        "\n",
+        "2\n",
+        "4\n",
+        "6\n",
+        "8\n",
+        "10\n",
+        "\n",
+        "\n",
+        "✅ Summary:\n",
+        "\n",
+        "iter() → creates an iterator from a sequence.\n",
+        "\n",
+        "next() → retrieves the next item from the iterator.\n",
+        "\n",
+        "This approach is handy when you want to manually control iteration rather than using a loop.\n",
+        "\n",
+        "If you want, I can also show a one-liner version using islice to make it more Pythonic. Do you want me to do that?"
+      ],
+      "metadata": {
+        "id": "u5WuKvuSfTuo"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q4. What is a generator function in python? Why yield keyword is used? Give an example of a generator\n",
+        "function."
+      ],
+      "metadata": {
+        "id": "aGXt4vITflVs"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "What is a Generator Function in Python?\n",
+        "\n",
+        "A generator function is a special type of function that returns an iterator and allows you to generate values one at a time instead of storing all of them in memory at once.\n",
+        "\n",
+        "Generator functions use the yield keyword instead of return.\n",
+        "\n",
+        "Each time yield is called, the function pauses its state, and resumes from that point when the next value is requested.\n",
+        "\n",
+        "Why yield is used\n",
+        "\n",
+        "yield produces a value and pauses the function.\n",
+        "\n",
+        "This allows lazy evaluation, meaning values are generated on-the-fly, which is memory efficient for large datasets.\n",
+        "\n",
+        "Example of a Generator Function\n",
+        "# Generator function to yield even numbers up to 10\n",
+        "def even_numbers():\n",
+        "    for num in range(2, 11, 2):\n",
+        "        yield num\n",
+        "\n",
+        "# Using the generator\n",
+        "gen = even_numbers()\n",
+        "\n",
+        "# Printing values one by one\n",
+        "for value in gen:\n",
+        "    print(value)\n",
+        "\n",
+        "\n",
+        "Output:\n",
+        "\n",
+        "2\n",
+        "4\n",
+        "6\n",
+        "8\n",
+        "10\n",
+        "\n",
+        "\n",
+        "✅ Key Points:\n",
+        "\n",
+        "Generator functions use yield instead of return.\n",
+        "\n",
+        "They do not store all values in memory, making them efficient.\n",
+        "\n",
+        "You can iterate over them using for or next().\n",
+        "\n",
+        "If you want, I can also show an example of a generator for infinite sequences, which is a neat trick in Python. Do you want me to show that?"
+      ],
+      "metadata": {
+        "id": "EyC4sAHef0pL"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q5. Create a generator function for prime numbers less than 1000. Use the next() method to print the\n",
+        "first 20 prime numbers."
+      ],
+      "metadata": {
+        "id": "Cl4sM4jbf_YF"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Step 1: Generator function for primes\n",
+        "def prime_generator(limit=1000):\n",
+        "    for num in range(2, limit):\n",
+        "        # Check if num is prime\n",
+        "        is_prime = True\n",
+        "        for i in range(2, int(num**0.5) + 1):\n",
+        "            if num % i == 0:\n",
+        "                is_prime = False\n",
+        "                break\n",
+        "        if is_prime:\n",
+        "            yield num\n",
+        "\n",
+        "Step 2: Use next() to print first 20 primes\n",
+        "# Create generator object\n",
+        "primes = prime_generator()\n",
+        "\n",
+        "# Print first 20 prime numbers\n",
+        "for _ in range(20):\n",
+        "    print(next(primes))\n",
+        "\n",
+        "\n",
+        "Output:\n",
+        "\n",
+        "2\n",
+        "3\n",
+        "5\n",
+        "7\n",
+        "11\n",
+        "13\n",
+        "17\n",
+        "19\n",
+        "23\n",
+        "29\n",
+        "31\n",
+        "37\n",
+        "41\n",
+        "43\n",
+        "47\n",
+        "53\n",
+        "59\n",
+        "61\n",
+        "67\n",
+        "71\n",
+        "\n",
+        "\n",
+        "✅ Explanation:\n",
+        "\n",
+        "prime_generator() generates primes on-the-fly up to 1000.\n",
+        "\n",
+        "yield pauses the function and returns the next prime number when next() is called.\n",
+        "\n",
+        "Using a for loop with next() allows us to get only the first 20 primes without generating all primes up to 1000.\n",
+        "\n",
+        "If you want, I can also give a more optimized version of this generator using the Sieve of Eratosthenes, which is much faster for large numbers. It’s a neat trick for efficiency.\n",
+        "\n",
+        "Do you want me to show that optimized version?"
+      ],
+      "metadata": {
+        "id": "phegQhUGgK_G"
+      }
+    }
+  ]
+}
